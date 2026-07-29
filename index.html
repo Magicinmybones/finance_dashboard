@@ -175,10 +175,6 @@ svg{display:block}
   #ins4,#ins5{left:50%;transform:translateX(-50%)}
   /* show the skyline rather than mostly sky in the taller card */
   #g1{background-position:calc(-18 * var(--u)) 78%}
-  /* Continue the hero's lower shadow band with a solid fill below its first row. */
-  #stage::before{content:'';position:absolute;left:0;right:0;
-    top:var(--rB);bottom:0;z-index:1;pointer-events:none;
-    background:var(--hero-tail)}
 }
 
 
@@ -210,11 +206,11 @@ svg{display:block}
   #fit{position:static;height:auto;overflow:visible}
   #stage{position:relative;inset:auto;width:100%;
          height:calc(var(--heroH) + var(--gridH) + var(--dock))}
-  /* Continue the photo's lower shadow band below the hero with one solid tone. */
+  /* The fill begins only after the complete, uncropped hero image. */
   #stage::before{content:'';position:absolute;left:0;right:0;
-    top:var(--heroH);bottom:0;z-index:1;pointer-events:none;
+    top:calc(1083 * var(--u));bottom:0;z-index:1;pointer-events:none;
     background:var(--hero-tail)}
-  .bg{left:0;top:0;width:100vw;height:calc(760 * var(--u));
+  .bg{left:0;top:0;width:100vw;height:calc(1083 * var(--u));
       background-size:calc(1444 * var(--u)) calc(1083 * var(--u));
       background-position:calc(50vw - 729 * var(--u)) 0}
   /* keep the scrim light across the face band, then deepen it behind the cards */
